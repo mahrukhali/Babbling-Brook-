@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Homework 4</title>
+    <!-- You can include any additional styling or scripts here -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 move">
+          <!-- You can add any HTML content here -->
+          <h1>Homework 4</h1>
+          <button id="orgbrook">Original Babbling brook</button>
+          <br />
+          <img
+            src="https://sleephub.com.au/wp-content/uploads/2016/05/brown-noise-sq.jpg"
+            alt="g"
+            style="width: 400px; height: 300px; padding-top: 5px"
+          />
+          <br />
+          <br />
+          <button id="brook">Babbling brook</button>
+          <div>
+            <img
+              src="https://img.cdn-pictorem.com/uploads/collection/J/JF9TCG3JNK/900_Temira-Kaser_Babbling_Brook.jpg"
+              alt="bab"
+              style="width: 400px; height: 300px; padding-top: 5px"
+            />
+          </div>
+          <br />
+          <button id="dial">Dial tone</button>
+          <img
+            src="https://static01.nyt.com/images/2014/01/12/magazine/12WMT-phone/12WMT-phone-superJumbo.png"
+            alt="dial"
+            style="width: 400px; height: 300px; padding-top: 5px"
+          />
+
+          <button id="ring">Ring</button>
+          <img
+            src="https://www.komando.com/wp-content/uploads/2019/10/dreamstime_m_138233170.jpg"
+            alt="ring"
+            style="width: 400px; height: 300px; padding-top: 5px"
+          />
+          <script src="noise.js"></script>
+
+          <br />
+          <br />
+          <img
+            src="https://m.media-amazon.com/images/I/61kftnxjgML._AC_UF1000,1000_QL80_.jpg"
+            alt="old"
+            style="width: 400px; height: 300px; padding-top: 5px"
+          />
+          <br />
+          <br />
+          <ul class="numbers">
+            <!-- Dynamically populated number buttons will go here -->
+          </ul>
+        </div>
+        <div class="col-md-4 m">
+          <img
+            src="Screenshot 2024-02-20 at 3.35.02 PM.png"
+            alt="e"
+            style="width: 600px; height: 400px; padding-top: 40px"
+          />
+          <img
+            src="Screenshot 2024-02-18 at 4.46.15 PM.png"
+            alt="we"
+            style="width: 600px; height: 400px; padding-top: 0px"
+          />
+  
+         
+          <img
+            src="Screenshot 2024-02-18 at 5.07.37 PM.png"
+            alt="w"
+            style="width: 600px; height: 300px; padding-top: 40px"
+          />
+         
+          <img
+            src="Screenshot 2024-02-18 at 5.12.44 PM.png"
+            alt="c"
+            style="width: 600px; height: 300px; padding-top: 40px"
+          />
+        
+          <img
+            src="Screenshot 2024-02-19 at 9.36.43 PM.png"
+            alt="d"
+            style="width: 600px; height: 300px; padding-top: 40px"
+          />
+        </div>
+        <div class="col-md-4 c">
+          <h2 class="a">Blog:</h2>
+          <br />
+          <div class="d">
+            <h4> <b> Original Babbling Brook:</b></h4>
+       
+            This is the direct translation I got from the classic SuperCollider
+            code.
+            <ul>
+              <li>Brown Noise</li>
+              <li>3 biquad filters</li>
+            </ul>
+            However if we listen to the sound, it doesnt sound like babbling
+            brook, rather more like a river. We dont hear any bubbles.
+          </div>
+          
+         
+          <div class="bab">
+           <h4> <b>Babbling Brook:<b></b></h4> 
+            
+            <div>
+              For the babbling brook, I used:
+              <ul>
+                <li>3 biquad filters</li>
+                <li>2 gain nodes</li>
+                <li> 1 brown noise</li>
+                <li>1 buffer</li>
+              </ul>
+              The biquad filters consisted of: 2 lowpass and one highpass filter.This alone 
+              will create the river sound as described above. The lowpass filters frequency were 14 and 400. 
+              The high passfilters frequency was 400 as well. When I added the two gain nodes, I was able to hear
+              the babbling brook sound. One gain node which is connected to the
+              highpass filter creates the bubble sound which is set to 800 , this creates the overall
+              sound shaping. The second gain node called gainNode reduces the
+              overall volume to prevent clipping which was 0.1.
+  
+            </div>
+             
+           
+        </div>
+        <div class="q">
+          <h3>Information:</h3>
+
+          I wanted to create the phone buttons sound, which include the dial,
+          ring and dialing a number. These sounds essentailly build up on each
+          other. What I found most difficult was to create the phone
+          buttons.
+        </div>
+        <div class="d">
+          <h4><b>Dial Tone: </b></h4>
+          For the dial tone, I used the frequencies provided in the textbook.
+          I used the following:
+          <ul>
+            <li>Two oscillators</li>
+            <li>1 gain node</li>
+          </ul>
+          To construct the tone,we need to add the sine waves, which occurs by
+          connecting the oscillator to a gain node. I honestly was 
+          suprised when I created the tone because it wasnt as complicated as I thought it would be and
+          all I really needed were the right frequencies. The method in the textbook
+          explained what frequencies and waveform I needed, all I needed to do
+          was connect it. The oscillators frequency were 350 and 440. I made the gain node .125 to scale the frequency.
+        </div>
+        <div class="f">
+          <h4><b>Ring: </b></h4>
+          I wanted to create the sound we hear when we call someone on the
+          phone, specifically iphone users (not sure how it sounds on android). I used the
+          following which is similar to the dial tone:
+          <ul>
+            <li>Two oscillators</li>
+            <li>1 gain node</li>
+          </ul>
+          This also requires the addition of the sine waves, however I also
+          created a function that would allow the ring to stop and play again.
+          Just as we hear on the phone. This was a little tricky. I could have
+          used a buffer, however I didn't know how to create it with empty
+          sound and I wanted the same timing everytime. I used set interval
+          and changed the gain value with my toggle function. The frequencies 
+          for the oscillators were 480 and 440. The gain node was set to .125 as well.
+   
+        </div>
+        <div class="d">
+          <h4><b>Dial Buttons: </b></h4>
+          
+          This was the hardest sound for me to create, as the connection to
+          the different options was not working. To create the sounds, I
+          used:
+          <ul>
+            <li>Two oscillators</li>
+            <li>1 gain node</li>
+            <li>1 biquad filter</li>
+          </ul>
+          Each option has tone pairings of 8 frequencies. I created an
+          object that holds key-value pairs, where each key is a number or
+          symbol, and each value is another object containing the two
+          frequencies. I connected the two pairings to the gain node which connects to the biquad filter.
+          This could have been implemented without the biquad filter, however it just sounds softer with it.
+          The gain node again was set to .125 for scaling.
+          <br>
+          <h6> <b> Overall:</b></h6>
+      
+          I dont think I would be able to create the dial buttons or the ring without starting off
+          with the dial sound. Each sound required a couple more steps and additions. I think if I started 
+          with the dial buttons, I wouldnt know where to start or how to 
+          connect or what to include regarding gain nodes and biquad filters. 
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+    <style>
+     
+      .c {
+        padding-top: 10px;
+        margin-left: 200px;
+      }
+      .a{
+        background-color: rgb(213, 241, 56);
+        text-align: center;
+       padding-bottom:10px;
+        padding-top:10px;
+      }
+      .e{
+        background-color:aqua;
+        margin-top:100px;
+       
+      }
+      .d{
+        background-color:aqua;
+      }
+      .f{
+        background-color: pink;
+       
+      }
+      .bab{
+        /* padding-top:150px; */
+        /* margin-top:130px; */
+        background-color: pink;
+
+      }
+      .q{
+        background-color: orange;
+      }
+      .numbers li {
+        font-size: 30px;
+      }
+      
+
+      .numbers li:active {
+        color: rgb(255, 0, 238);
+        border-color: rgb(255, 0, 195);
+        transition-duration: 0s;
+      }
+      .bab-im {
+        width: 40px;
+        height: 40px;
+      }
+      .move {
+        margin-left: -300px;
+        padding-right: 100px;
+        margin-right: 100px;
+      }
+      * {
+  
+    font-weight: normal;
+    }
+    </style>
+  
+  </body>
+</html>
